@@ -4,6 +4,7 @@ main{width:800px; margin:auto;}
     padding:30px;
     border-radius:10px;
     text-align:center;
+    margin-top:20px;
     }
 .question_select{display: flex; 
         justify-content: space-between;

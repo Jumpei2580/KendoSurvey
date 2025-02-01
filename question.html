@@ -9,8 +9,25 @@
 </head>
 <body>
    <main>
-    <form>
-        <div class="question">
+    <form id="form">
+        <div class="question" data-vector="[1,1]">
+            <h4>
+                忍耐力（がまん強さ、ねばり強さ、苦痛に耐える）
+            </h4>
+                <div class="question_select" >
+                    <p>強く思う</p>
+                    <div class="question_radio">
+                        <input type="radio" name="q0" value="1">
+                        <input type="radio" name="q0" value="2">
+                        <input type="radio" name="q0" value="3">
+                        <input type="radio" name="q0" value="4">
+                        <input type="radio" name="q0" value="5">
+                    </div>
+                    <p> 全く思わない</p>
+                </div>
+        </div>
+
+        <div class="question" data-vector="[1,1]">
             <h4>
                 忍耐力（がまん強さ、ねばり強さ、苦痛に耐える）
             </h4>
@@ -26,9 +43,94 @@
                     <p> 全く思わない</p>
                 </div>
         </div>
+
+        <div class="question" data-vector="[1,1]">
+            <h4>
+                忍耐力（がまん強さ、ねばり強さ、苦痛に耐える）
+            </h4>
+                <div class="question_select">
+                    <p>強く思う</p>
+                    <div class="question_radio">
+                        <input type="radio" name="q2" value="1">
+                        <input type="radio" name="q2" value="2">
+                        <input type="radio" name="q2" value="3">
+                        <input type="radio" name="q2" value="4">
+                        <input type="radio" name="q2" value="5">
+                    </div>
+                    <p> 全く思わない</p>
+                </div>
+        </div>
+
+        <div class="question" data-vector="[1,1]">
+            <h4>
+                忍耐力（がまん強さ、ねばり強さ、苦痛に耐える）
+            </h4>
+                <div class="question_select">
+                    <p>強く思う</p>
+                    <div class="question_radio">
+                        <input type="radio" name="q3" value="1">
+                        <input type="radio" name="q3" value="2">
+                        <input type="radio" name="q3" value="3">
+                        <input type="radio" name="q3" value="4">
+                        <input type="radio" name="q3" value="5">
+                    </div>
+                    <p> 全く思わない</p>
+                </div>
+        </div>
+
+        <div class="question" data-vector="[1,1]">
+            <h4>
+                忍耐力（がまん強さ、ねばり強さ、苦痛に耐える）
+            </h4>
+                <div class="question_select">
+                    <p>強く思う</p>
+                    <div class="question_radio">
+                        <input type="radio" name="q4" value="1">
+                        <input type="radio" name="q4" value="2">
+                        <input type="radio" name="q4" value="3">
+                        <input type="radio" name="q4" value="4">
+                        <input type="radio" name="q4" value="5">
+                    </div>
+                    <p> 全く思わない</p>
+                </div>
+        </div>
+        <button onclick="send()" border-color="#514075" background-color="#e6e2f0">送信</button>
     </form>
    </main>
     
 </body>
+
+<script>
+    const form = document.getElementById("form");
+    const questions = document.getElementsByClassName("question");
+
+    function vectorAdd(v1,v2){
+        return v1.map((value,index) => value + v2[index]);
+    }
+
+    function send(){
+        let result = [0,0];
+
+        const formdata = new FormData(form);
+        let answers = [];
+        for(let key of formdata.keys()){
+            let a = parseInt(formdata.get(key));
+            a =a-3;
+            a = a*(-0.5);
+            answers.push(a);
+        }
+
+        for(let i=0; i<questions.length; i++){
+            let vector = JSON.parse(questions[i].dataset.vector);
+            let scaled = vector.map(v => v*answers[i]);
+            result = vectorAdd(result, scaled);
+        }
+        
+        alert(result);
+
+        
+    }
+</script>
+
 </html>
 
