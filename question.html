@@ -8,9 +8,12 @@
 
 </head>
 <body>
+    <header style="background-color: black; width:100%; height:80px;color: white;" >
+        <h1 style="margin:auto;text-align:center;">剣道自己診断</h1>
+    </header>
    <main>
     <form id="form">
-        <div class="question" data-vector="[1,1]">
+        <div class="question" data-vector="[-4.63,0]">
             <h4>
                 忍耐力（がまん強さ、ねばり強さ、苦痛に耐える）
             </h4>
@@ -27,9 +30,9 @@
                 </div>
         </div>
 
-        <div class="question" data-vector="[1,1]">
+        <div class="question" data-vector="[4.44,0]">
             <h4>
-                忍耐力（がまん強さ、ねばり強さ、苦痛に耐える）
+                闘争心（大事な場面での闘志やファイト、燃える気持ち）
             </h4>
                 <div class="question_select">
                     <p>強く思う</p>
@@ -44,9 +47,9 @@
                 </div>
         </div>
 
-        <div class="question" data-vector="[1,1]">
+        <div class="question" data-vector="[3.75,0]">
             <h4>
-                忍耐力（がまん強さ、ねばり強さ、苦痛に耐える）
+                自己実現（可能性への挑戦、主体性、自主性）
             </h4>
                 <div class="question_select">
                     <p>強く思う</p>
@@ -61,9 +64,9 @@
                 </div>
         </div>
 
-        <div class="question" data-vector="[1,1]">
+        <div class="question" data-vector="[4.25,0]">
             <h4>
-                忍耐力（がまん強さ、ねばり強さ、苦痛に耐える）
+                勝利志向性（勝利意欲、勝利重視の姿勢）
             </h4>
                 <div class="question_select">
                     <p>強く思う</p>
@@ -78,9 +81,9 @@
                 </div>
         </div>
 
-        <div class="question" data-vector="[1,1]">
+        <div class="question" data-vector="[-4.19,0]">
             <h4>
-                忍耐力（がまん強さ、ねばり強さ、苦痛に耐える）
+                自己コントロール（自己管理、緊張の緩和、気持ちの切り替え）
             </h4>
                 <div class="question_select">
                     <p>強く思う</p>
@@ -90,6 +93,74 @@
                         <input type="radio" name="q4" value="3">
                         <input type="radio" name="q4" value="4">
                         <input type="radio" name="q4" value="5">
+                    </div>
+                    <p> 全く思わない</p>
+                </div>
+        </div>
+
+        <div class="question" data-vector="[-3.31,0]">
+            <h4>
+                リラックス（不安・プレッシャー・緊張のない精神状態）
+            </h4>
+                <div class="question_select">
+                    <p>強く思う</p>
+                    <div class="question_radio">
+                        <input type="radio" name="q5" value="1">
+                        <input type="radio" name="q5" value="2">
+                        <input type="radio" name="q5" value="3">
+                        <input type="radio" name="q5" value="4">
+                        <input type="radio" name="q5" value="5">
+                    </div>
+                    <p> 全く思わない</p>
+                </div>
+        </div>
+
+        <div class="question" data-vector="[-4.63,0]">
+            <h4>
+                集中力（落ち着き、冷静さ、注意の集中）
+            </h4>
+                <div class="question_select">
+                    <p>強く思う</p>
+                    <div class="question_radio">
+                        <input type="radio" name="q6" value="1">
+                        <input type="radio" name="q6" value="2">
+                        <input type="radio" name="q6" value="3">
+                        <input type="radio" name="q6" value="4">
+                        <input type="radio" name="q6" value="5">
+                    </div>
+                    <p> 全く思わない</p>
+                </div>
+        </div>
+
+        <div class="question" data-vector="[3.94,0]">
+            <h4>
+                自信（能力・実力発揮・目標達成への自信）
+            </h4>
+                <div class="question_select">
+                    <p>強く思う</p>
+                    <div class="question_radio">
+                        <input type="radio" name="q7" value="1">
+                        <input type="radio" name="q7" value="2">
+                        <input type="radio" name="q7" value="3">
+                        <input type="radio" name="q7" value="4">
+                        <input type="radio" name="q7" value="5">
+                    </div>
+                    <p> 全く思わない</p>
+                </div>
+        </div>
+
+        <div class="question" data-vector="[-3.5,0]">
+            <h4>
+                作戦能力（試合中の戦略的思考や行動の能力）
+            </h4>
+                <div class="question_select">
+                    <p>強く思う</p>
+                    <div class="question_radio">
+                        <input type="radio" name="q8" value="1">
+                        <input type="radio" name="q8" value="2">
+                        <input type="radio" name="q8" value="3">
+                        <input type="radio" name="q8" value="4">
+                        <input type="radio" name="q8" value="5">
                     </div>
                     <p> 全く思わない</p>
                 </div>
@@ -108,9 +179,21 @@
         return v1.map((value,index) => value + v2[index]);
     }
 
+    function getQuadrant(v){
+
+            let x = v[0];
+            let y = v[1];
+
+            if (x > 0 && y > 0) return 1;  // 第1象限
+            if (x < 0 && y > 0) return 2;  // 第2象限
+            if (x < 0 && y < 0) return 3;  // 第3象限
+            if (x > 0 && y < 0) return 4;  // 第4象限
+            return 0;  // 軸上または原点
+    }
+
     function send(){
         let result = [0,0];
-
+      
         const formdata = new FormData(form);
         let answers = [];
         for(let key of formdata.keys()){
@@ -125,6 +208,17 @@
             let scaled = vector.map(v => v*answers[i]);
             result = vectorAdd(result, scaled);
         }
+    
+        if(getQuadrant(result)===1){
+            window.location.href="result1.html";
+        }else if(getQuadrant(result)===2){
+            window.location.href="result1.html";
+        }else if(getQuadrant(result)===3){
+            window.location.href="result1.html";
+        }else if(getQuadrant(result)===4){
+            window.location.href="result1.html";
+        }
+
         
         alert(result);
 

@@ -17,3 +17,6 @@ input{width:20px;
     display:flex;
     gap:30px;
 }
+*{
+    margin: 0;
+}
