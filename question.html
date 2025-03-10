@@ -8,7 +8,7 @@
 
 </head>
 <body>
-    <header style="background-color: black; width:100%; height:80px;color: white;" >
+    <header style="background-color: black; width:100%; height:60px;color: white; background:linear-gradient(to top, rgba(242, 241, 255, 0.678) 0%,rgba(0,0,0,0.78) 50%);" >
         <h1 style="margin:auto;text-align:center;">剣道自己診断</h1>
     </header>
    <main>
@@ -165,10 +165,232 @@
                     <p> 全く思わない</p>
                 </div>
         </div>
-        <button onclick="send()" border-color="#514075" background-color="#e6e2f0">送信</button>
+
+        <div class="question" data-vector="[0,4.19]">
+            <h4>
+                打ちが正確か（打ちたいところに正確に打てているか、手の内がうまくできているか）
+            </h4>
+                <div class="question_select">
+                    <p>強く思う</p>
+                    <div class="question_radio">
+                        <input type="radio" name="q9" value="1">
+                        <input type="radio" name="q9" value="2">
+                        <input type="radio" name="q9" value="3">
+                        <input type="radio" name="q9" value="4">
+                        <input type="radio" name="q9" value="5">
+                    </div>
+                    <p> 全く思わない</p>
+                </div>
+        </div>
+
+        <div class="question" data-vector="[0,3.38]">
+            <h4>
+                技の引き出しの多さ（試合で実際に使えている技の数）
+            </h4>
+                <div class="question_select">
+                    <p>強く思う</p>
+                    <div class="question_radio">
+                        <input type="radio" name="q10" value="1">
+                        <input type="radio" name="q10" value="2">
+                        <input type="radio" name="q10" value="3">
+                        <input type="radio" name="q10" value="4">
+                        <input type="radio" name="q10" value="5">
+                    </div>
+                    <p> 全く思わない</p>
+                </div>
+        </div>
+
+        <div class="question" data-vector="[0,4.19]">
+            <h4>
+                間合いの管理ができているか
+            </h4>
+                <div class="question_select">
+                    <p>強く思う</p>
+                    <div class="question_radio">
+                        <input type="radio" name="q11" value="1">
+                        <input type="radio" name="q11" value="2">
+                        <input type="radio" name="q11" value="3">
+                        <input type="radio" name="q11" value="4">
+                        <input type="radio" name="q11" value="5">
+                    </div>
+                    <p> 全く思わない</p>
+                </div>
+        </div>
+
+        <div class="question" data-vector="[0,4.75]">
+            <h4>
+                いつでも打てるような構えができているか
+            </h4>
+                <div class="question_select">
+                    <p>強く思う</p>
+                    <div class="question_radio">
+                        <input type="radio" name="q12" value="1">
+                        <input type="radio" name="q12" value="2">
+                        <input type="radio" name="q12" value="3">
+                        <input type="radio" name="q12" value="4">
+                        <input type="radio" name="q12" value="5">
+                    </div>
+                    <p> 全く思わない</p>
+                </div>
+        </div>
+
+        <div class="question" data-vector="[0,4.13]">
+            <h4>
+                自分の体を想像通りにコントロールできているか
+            </h4>
+                <div class="question_select">
+                    <p>強く思う</p>
+                    <div class="question_radio">
+                        <input type="radio" name="q13" value="1">
+                        <input type="radio" name="q13" value="2">
+                        <input type="radio" name="q13" value="3">
+                        <input type="radio" name="q13" value="4">
+                        <input type="radio" name="q13" value="5">
+                    </div>
+                    <p> 全く思わない</p>
+                </div>
+        </div>
+
+        <div class="question" data-vector="[0,4.06]">
+            <h4>
+                動きの兆しを見て、相手の動きを予測できるか
+            </h4>
+                <div class="question_select">
+                    <p>強く思う</p>
+                    <div class="question_radio">
+                        <input type="radio" name="q14" value="1">
+                        <input type="radio" name="q14" value="2">
+                        <input type="radio" name="q14" value="3">
+                        <input type="radio" name="q14" value="4">
+                        <input type="radio" name="q14" value="5">
+                    </div>
+                    <p> 全く思わない</p>
+                </div>
+        </div>
+
+        <div class="question" data-vector="[0,-3.56]">
+            <h4>
+                体力
+            </h4>
+                <div class="question_select">
+                    <p>強く思う</p>
+                    <div class="question_radio">
+                        <input type="radio" name="q15" value="1">
+                        <input type="radio" name="q15" value="2">
+                        <input type="radio" name="q15" value="3">
+                        <input type="radio" name="q15" value="4">
+                        <input type="radio" name="q15" value="5">
+                    </div>
+                    <p> 全く思わない</p>
+                </div>
+        </div>
+
+        <div class="question" data-vector="[0,-3.38]">
+            <h4>
+                パワー（単純な力の強さ）
+            </h4>
+                <div class="question_select">
+                    <p>強く思う</p>
+                    <div class="question_radio">
+                        <input type="radio" name="q16" value="1">
+                        <input type="radio" name="q16" value="2">
+                        <input type="radio" name="q16" value="3">
+                        <input type="radio" name="q16" value="4">
+                        <input type="radio" name="q16" value="5">
+                    </div>
+                    <p> 全く思わない</p>
+                </div>
+        </div>
+
+        <div class="question" data-vector="[0,-4.06]">
+            <h4>
+                足の張り
+            </h4>
+                <div class="question_select">
+                    <p>強く思う</p>
+                    <div class="question_radio">
+                        <input type="radio" name="q17" value="1">
+                        <input type="radio" name="q17" value="2">
+                        <input type="radio" name="q17" value="3">
+                        <input type="radio" name="q17" value="4">
+                        <input type="radio" name="q17" value="5">
+                    </div>
+                    <p> 全く思わない</p>
+                </div>
+        </div>
+
+        <div class="question" data-vector="[0,-3.56]">
+            <h4>
+                すり足や踏み込みの速さ
+            </h4>
+                <div class="question_select">
+                    <p>強く思う</p>
+                    <div class="question_radio">
+                        <input type="radio" name="q18" value="1">
+                        <input type="radio" name="q18" value="2">
+                        <input type="radio" name="q18" value="3">
+                        <input type="radio" name="q18" value="4">
+                        <input type="radio" name="q18" value="5">
+                    </div>
+                    <p> 全く思わない</p>
+                </div>
+        </div>
+
+        <div class="question" data-vector="[0,-4.25]">
+            <h4>
+                一つひとつの動作の間の速さ
+            </h4>
+                <div class="question_select">
+                    <p>強く思う</p>
+                    <div class="question_radio">
+                        <input type="radio" name="q19" value="1">
+                        <input type="radio" name="q19" value="2">
+                        <input type="radio" name="q19" value="3">
+                        <input type="radio" name="q19" value="4">
+                        <input type="radio" name="q19" value="5">
+                    </div>
+                    <p> 全く思わない</p>
+                </div>
+        </div>
+
+        <div class="question" data-vector="[0,-4.31]">
+            <h4>
+                声
+            </h4>
+                <div class="question_select">
+                    <p>強く思う</p>
+                    <div class="question_radio">
+                        <input type="radio" name="q20" value="1">
+                        <input type="radio" name="q20" value="2">
+                        <input type="radio" name="q20" value="3">
+                        <input type="radio" name="q20" value="4">
+                        <input type="radio" name="q20" value="5">
+                    </div>
+                    <p> 全く思わない</p>
+                </div>
+        </div>
+
+        <div class="question" data-vector="[0,-4.56]">
+            <h4>
+                体幹（身体の安定感、重心の強さ）
+            </h4>
+                <div class="question_select">
+                    <p>強く思う</p>
+                    <div class="question_radio">
+                        <input type="radio" name="q21" value="1">
+                        <input type="radio" name="q21" value="2">
+                        <input type="radio" name="q21" value="3">
+                        <input type="radio" name="q21" value="4">
+                        <input type="radio" name="q21" value="5">
+                    </div>
+                    <p> 全く思わない</p>
+                </div>
+        </div>
+        <button onclick="send()" style="border-color:#9c91b3; background-color:#e6e2f0; width:auto; height:50px; border-radius:5px; margin:auto; display: block;padding-left:150px; padding-right:150px;margin-top:35px; margin-bottom: 35px;">
+            <p style="font-size:20px;">診 断 す る</p>
+        </button>
     </form>
    </main>
-    
 </body>
 
 <script>
@@ -212,19 +434,15 @@
         if(getQuadrant(result)===1){
             window.location.href="result1.html";
         }else if(getQuadrant(result)===2){
-            window.location.href="result1.html";
+            window.location.href="result2.html";
         }else if(getQuadrant(result)===3){
-            window.location.href="result1.html";
+            window.location.href="result3.html";
         }else if(getQuadrant(result)===4){
-            window.location.href="result1.html";
+            window.location.href="result4.html";
         }
 
-        
         alert(result);
-
         
     }
 </script>
-
 </html>
-
