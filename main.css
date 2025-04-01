@@ -20,3 +20,28 @@ input{width:20px;
 *{
     margin: 0;
 }
+.startButton{
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #4644e8;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    margin:auto;
+    transition: background-color 0.3s;
+}
+.startButton:hover {
+    background-color: #06069b;
+}
+.link{
+    text-align: center;
+}
+.introduction{
+    text-align: center;
+    margin:10px;
+}
+.background{
+    background-color: #fff5e2;
+    border-radius: 10px;
+    padding:10px;
+}

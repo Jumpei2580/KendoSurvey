@@ -386,7 +386,7 @@
                     <p> 全く思わない</p>
                 </div>
         </div>
-        <button onclick="send()" style="border-color:#9c91b3; background-color:#e6e2f0; width:auto; height:50px; border-radius:5px; margin:auto; display: block;padding-left:150px; padding-right:150px;margin-top:35px; margin-bottom: 35px;">
+        <button onclick="send(event)" class="startButton" class="startButton:hover" style="width:auto; height:50px; border-radius:5px; margin:auto; display: block;padding-left:150px; padding-right:150px;margin-top:35px; margin-bottom: 35px;">
             <p style="font-size:20px;">診 断 す る</p>
         </button>
     </form>
@@ -413,21 +413,36 @@
             return 0;  // 軸上または原点
     }
 
-    function send(){
+    function send(event){//eventに変更
+        event.preventDefault();//リセットされないように変更
         let result = [0,0];
       
         const formdata = new FormData(form);
         let answers = [];
+
+        let allFilled = true;//追加
+
         for(let key of formdata.keys()){
             let a = parseInt(formdata.get(key));
+
+            if (a === null || a === "") {
+                allFilled = false;  // もし未入力があれば false にする
+                break;  // ループを抜ける（無駄な処理を減らす）
+            }//追加、全ての項目が入力されているかチェック
+
             a =a-3;
             a = a*(-0.5);
             answers.push(a);
         }
 
+        if (!allFilled) {
+            alert("すべての質問に回答してください！");
+            return;  // ここで `send()` を終了
+        }//追加
+
         for(let i=0; i<questions.length; i++){
             let vector = JSON.parse(questions[i].dataset.vector);
-            let scaled = vector.map(v => v*answers[i]);
+            let scaled = vector.map(v => v*(answers[i]));
             result = vectorAdd(result, scaled);
         }
     
@@ -441,7 +456,7 @@
             window.location.href="result4.html";
         }
 
-        alert(result);
+        //alert(result);
         
     }
 </script>
